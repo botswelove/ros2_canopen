@@ -1,0 +1,14 @@
+diff --git a/python/dcf-tools/dcfgen/cli.py b/python/dcf-tools/dcfgen/cli.py
+index f487cfff..8dbb7d16 100644
+--- a/python/dcf-tools/dcfgen/cli.py
++++ b/python/dcf-tools/dcfgen/cli.py
+@@ -88,6 +88,9 @@ class Slave(dcf.Device):
+ 
+         if cob_id != pdo.cob_id | 0x80000000:
+             sdo.append(self.concise_value(comm_idx, 1, pdo.cob_id | 0x80000000))
++        else:
++            sdo.append(self.concise_value(comm_idx, 1, pdo.cob_id | 0x80000000))
++
+ 
+         if not (pdo.cob_id & 0x80000000):
+             if "transmission" in cfg:
